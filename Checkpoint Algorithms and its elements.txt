@@ -1,0 +1,26 @@
+ALGORITHM counter
+VAR
+    sentence:STRING;
+    n_c,n_w,n_v:INTEGER;
+    c:CHAR;
+BEGIN
+   Read(sentence)
+   n_c:=0;
+   n_v:=0;
+   n_w:=1;
+   WHILE (c<>".") DO
+       n_c:=n_c + 1;
+       // number of voyels
+       IF (c in ["a","e","i","o","u","A","E","I","O","U"]) THEN
+           n_v:=n_v + 1;
+       END_IF
+       // number of words
+       IF (c=" ") THEN
+          n_w:=n_w + 1;
+       END_IF
+   END_WHILE
+
+    Write('Length of the sentence is:',n_c)
+    Write('The number of vowels in the sentence is:',n_v)
+    Write('The number of words in the sentence is:' ,n_w)
+END
